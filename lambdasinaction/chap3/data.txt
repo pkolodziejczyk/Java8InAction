@@ -1,0 +1,4 @@
+This is my first line for my dummy file
+Of course, we have a second line
+And a third  !
+Yet an other one...

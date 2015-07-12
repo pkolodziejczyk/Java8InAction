@@ -11,14 +11,18 @@ public class Filtering{
 
     public static void main(String...args){
 
+    	System.out.println("Filtering with predicate");
+    	System.out.println("converte a stream to a List with Stream.collect(toList())");
         // Filtering with predicate
         List<Dish> vegetarianMenu =
             menu.stream()
                 .filter(Dish::isVegetarian)
                 .collect(toList());
 
+        
         vegetarianMenu.forEach(System.out::println);
 
+        System.out.println("Fitring even element and distinct");
         // Filtering unique elements
         List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
         numbers.stream()
@@ -26,6 +30,7 @@ public class Filtering{
                .distinct()
                .forEach(System.out::println);
 
+        System.out.println("Limiting a Stream to X elements limit(x)");
         // Truncating a stream
         List<Dish> dishesLimit3 =
             menu.stream()
@@ -35,6 +40,7 @@ public class Filtering{
 
         dishesLimit3.forEach(System.out::println);
 
+        System.out.println("Skiping X first elements in a stream skip(X)");
         // Skipping elements
         List<Dish> dishesSkip2 =
             menu.stream()

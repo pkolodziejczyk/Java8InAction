@@ -16,7 +16,8 @@ public class MeaningOfThis
 		r.run(); 
 	}
 	public static void main(String...args)
-	{       
+	{   
+		// Java tricks on variable : Scope of this
 		MeaningOfThis m = new MeaningOfThis();
 		m.doIt(); // ???   
 	}

@@ -19,6 +19,7 @@ public class NumericStreams{
         System.out.println("Number of calories:" + calories);
 
 
+        System.out.println("Getting the max of a stream");
         // max and OptionalInt
         OptionalInt maxCalories = menu.stream()                                                      
                                       .mapToInt(Dish::getCalories)
@@ -34,12 +35,14 @@ public class NumericStreams{
         }
         System.out.println(max);
 
+        System.out.println("Creating a Stream of even number from 1 to 100 (both inclusive)");
         // numeric ranges
         IntStream evenNumbers = IntStream.rangeClosed(1, 100)
                                  .filter(n -> n % 2 == 0);
 
         System.out.println(evenNumbers.count());
 
+        System.out.println("Using Stream to get all pythagorean triples with value in (1 to 100)");
         Stream<int[]> pythagoreanTriples =
                IntStream.rangeClosed(1, 100).boxed()
                         .flatMap(a -> IntStream.rangeClosed(a, 100)

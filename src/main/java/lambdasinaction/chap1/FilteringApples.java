@@ -11,6 +11,7 @@ public class FilteringApples{
                                               new Apple(155, "green"),
                                               new Apple(120, "red"));	
 
+        System.out.println("Passing a Predicate<Apple> to a custom methode for filter a liste");
         // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
         List<Apple> greenApples = filterApples(inventory, FilteringApples::isGreenApple);
         System.out.println(greenApples);
@@ -19,6 +20,7 @@ public class FilteringApples{
         List<Apple> heavyApples = filterApples(inventory, FilteringApples::isHeavyApple);
         System.out.println(heavyApples);
         
+        System.out.println("Passing a Lamdba Predicate<Apple> to a custom methode for filter a liste.");
         // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
         List<Apple> greenApples2 = filterApples(inventory, (Apple a) -> "green".equals(a.getColor()));
         System.out.println(greenApples2);

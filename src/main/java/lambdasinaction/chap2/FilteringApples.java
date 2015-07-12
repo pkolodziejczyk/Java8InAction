@@ -8,6 +8,7 @@ public class FilteringApples{
 
 		List<Apple> inventory = Arrays.asList(new Apple(80,"green"), new Apple(155, "green"), new Apple(120, "red"));	
 
+		System.out.println("Filtring with a custom method");
 		// [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
 		List<Apple> greenApples = filterApplesByColor(inventory, "green");
 		System.out.println(greenApples);
@@ -16,6 +17,7 @@ public class FilteringApples{
 		List<Apple> redApples = filterApplesByColor(inventory, "red");
 		System.out.println(redApples);
 
+		System.out.println("Filtring with a custom method using an implemenation of an interface");
 		// [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
 		List<Apple> greenApples2 = filter(inventory, new AppleColorPredicate());
 		System.out.println(greenApples2);
@@ -28,6 +30,7 @@ public class FilteringApples{
 		List<Apple> redAndHeavyApples = filter(inventory, new AppleRedAndHeavyPredicate());
 		System.out.println(redAndHeavyApples);
 
+		System.out.println("Filtring with a custom method using an anonymous implemenation of an interface");
 		// [Apple{color='red', weight=120}]
 		List<Apple> redApples2 = filter(inventory, new ApplePredicate() {
 			public boolean test(Apple a){

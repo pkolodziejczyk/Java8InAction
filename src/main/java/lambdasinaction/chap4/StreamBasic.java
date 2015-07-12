@@ -12,16 +12,19 @@ public class StreamBasic {
 
     public static void main(String...args){
         // Java 7
+    	System.out.println("Using Java 7 for filtring then display a list with forEach Java 8");
         getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
 
         System.out.println("---");
 
         // Java 8
+        System.out.println("Using Java 8 for filtring then display a list with forEach Java 8");
         getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
 
     }
 
     public static List<String> getLowCaloricDishesNamesInJava7(List<Dish> dishes){
+    	System.out.println("Java 7 : Filtering / remap (Old school)");
         List<Dish> lowCaloricDishes = new ArrayList<>();
         for(Dish d: dishes){
             if(d.getCalories() > 400){
@@ -41,6 +44,7 @@ public class StreamBasic {
     }
 
     public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes){
+    	System.out.println("Java 8 : Filtering /remap Stream Java 8");
         return dishes.stream()
                 .filter(d -> d.getCalories() > 400)
                 .sorted(comparing(Dish::getCalories))
